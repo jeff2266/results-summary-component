@@ -1,7 +1,7 @@
 type Params = {
 	name: string
 	icon: string
-	color: 'red' | 'orange' | 'green' | 'blue'
+	color: string
 	score: number
 }
 

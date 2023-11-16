@@ -1,5 +1,25 @@
 import './App.css'
+import data from './data.json'
 import Stat from './components/Stat'
+
+const colors = [
+	{
+		category: 'Reaction',
+		color: 'red'
+	},
+	{
+		category: 'Memory',
+		color: 'orange'
+	},
+	{
+		category: 'Verbal',
+		color: 'green'
+	},
+	{
+		category: 'Visual',
+		color: 'blue'
+	}
+]
 
 function App() {
 	return (
@@ -18,12 +38,11 @@ function App() {
 			<div className="stat-summary grid-flow gap-large section">
 				<h1 className="section-title">Summary</h1>
 				<div className="grid-flow">
-					<Stat name="Reaction" icon="assets/images/icon-reaction.svg" color="red" score={80} />
-					<Stat name="Memory" icon="assets/images/icon-memory.svg" color="orange" score={92} />
-					<Stat name="Verbal" icon="assets/images/icon-verbal.svg" color="green" score={61} />
-					<Stat name="Visual" icon="assets/images/icon-visual.svg" color="blue" score={72} />
+					{data.map(stat => ({ ...stat, color: colors.find(o => o.category === stat.category)?.color })).map(stat => (
+						<Stat name={stat.category} icon={stat.icon} color={stat.color ?? ''} score={stat.score} />
+					))}
 				</div>
-				<button className='button' >Continue</button>
+				<button className="button">Continue</button>
 			</div>
 		</>
 	)
