@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'HankenGrotesk';
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format('truetype');
+}
+
+:root {
+  --color-pri-hsl-red: 0, 100%, 67%;
+  --color-pri-hsl-orange: 39, 100%, 56%;
+  --color-pri-hsl-green: 166, 100%, 37%;
+  --color-pri-hsl-blue: 234, 85%, 45%;
+
+  --color-grad-hsl-slate: 252, 100%, 67%;
+  --color-grad-hsl-royal: 241, 81%, 54%;
+  --color-grad-hsl-violet: 256, 72%, 46%;
+  --color-grad-hsl-persian: 241, 72%, 46%;
+
+  --color-neut-hsl-white: 0, 0%, 100%;
+  --color-neut-hsl-blue: 221, 100%, 96%;
+  --color-neut-hsl-lavender: 241, 100%, 89%;
+  --color-neut-hsl-gray: 224, 30%, 27%;
+
+  --color-font-hsl-gray: 224, 5%, 92%;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'HankenGrotesk', sans-serif;
+  font-size: 1.125rem;
+}
+
+.rounded {
+  border-radius: 15px;
+}
+
+.section {
+  padding: 2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.grid-flow {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.grid-flow .gap-large {
+  gap: 2rem;
+}
+
+.flex-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+main {
+  max-width: 800px;
+  box-shadow: .5rem 1rem 3rem hsl(var(--color-neut-hsl-gray), .2);
+}
+
+@media (min-width: 600px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.score-overall {
+  background-image: linear-gradient(180deg, hsla(var(--color-grad-hsl-violet), 1), hsla(var(--color-grad-hsl-persian), 0));
+  width: 12rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  place-content: center;
+  place-items: center;
+}
+
+.score-overall span {
+  font-size: 5rem;
+  font-weight: 800;
+  color: hsl(var(--color-neut-hsl-white));
+  line-height: 1;
+  display: block;
+}
+
+.results {
+  background-image: linear-gradient(180deg, hsl(var(--color-grad-hsl-slate)), hsl(var(--color-grad-hsl-royal)));
+  color: hsl(var(--color-font-hsl-gray));
+  place-items: center;
+  text-align: center;
+}
+
+.results-description h2 {
+  font-size: x-large;
+  font-weight: 800;
+}
+
+.stat-wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.stat-wrapper[color="red"] {
+  background-color: hsla(var(--color-pri-hsl-red), 0.1);
+  color: hsl(var(--color-pri-hsl-red));
+}
+
+.stat-wrapper[color="orange"] {
+  background-color: hsla(var(--color-pri-hsl-orange), 0.1);
+  color: hsl(var(--color-pri-hsl-orange));
+}
+
+.stat-wrapper[color="green"] {
+  background-color: hsla(var(--color-pri-hsl-green), 0.1);
+  color: hsl(var(--color-pri-hsl-green));
+}
+
+.stat-wrapper[color="blue"] {
+  background-color: hsla(var(--color-pri-hsl-blue), 0.1);
+  color: hsl(var(--color-pri-hsl-blue));
+}
+
+.button {
+  border-radius: 50%;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
