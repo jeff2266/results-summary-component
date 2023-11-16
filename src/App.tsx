@@ -1,4 +1,3 @@
-import './App.css'
 import data from './data.json'
 import Stat from './components/Stat'
 
@@ -39,7 +38,7 @@ function App() {
 				<h1 className="section-title">Summary</h1>
 				<div className="grid-flow">
 					{data.map(stat => ({ ...stat, color: colors.find(o => o.category === stat.category)?.color })).map(stat => (
-						<Stat name={stat.category} icon={stat.icon} color={stat.color ?? ''} score={stat.score} />
+						<Stat key={stat.category} name={stat.category} icon={stat.icon} color={stat.color ?? ''} score={stat.score} />
 					))}
 				</div>
 				<button className="button">Continue</button>
